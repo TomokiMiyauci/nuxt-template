@@ -39,12 +39,19 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    '@nuxtjs/dotenv'
   ],
   /*
    ** Nuxt.js modules
    */
   modules: ['@nuxtjs/pwa'],
+  /*
+   ** dotenv options
+   */
+  dotenv: {
+    path: process.cwd()
+  },
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
