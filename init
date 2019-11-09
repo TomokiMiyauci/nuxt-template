@@ -16,8 +16,7 @@ touch .env
 yarn install
 
 rm -rf .git
+rm -rf init
 git init
 git add .
 git commit -m "initial commit"
-rm -rf init
-
