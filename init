@@ -10,8 +10,9 @@ read projectName
 echo ${projectName}
 mv ../nuxt-template/ ../${projectName}/
 cd ../${projectName}/
-# mv nuxt-template/ ${projectName}/
-# create env file
-# touch .env
-#  yarn install
-# git init
+
+create env file
+touch .env
+yarn install
+git init
+git commit -m "initial commit"
