@@ -1,6 +1,7 @@
 # nuxt-template
 
->Quick start with Vuetify + Hygen + Storybook in Nuxt.js project
+>Quick start with Vuetify + Hygen + Storybook in Nuxt.js project  
+![logo](https://github.com/TomokiMiyauci/nuxt-template/blob/images/logos.png)
 
 ## Feature
 
