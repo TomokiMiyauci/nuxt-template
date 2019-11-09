@@ -14,5 +14,8 @@ cd ../${projectName}/
 create env file
 touch .env
 yarn install
+
+rm -rf .git
 git init
+git add .
 git commit -m "initial commit"
