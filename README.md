@@ -1,22 +1,47 @@
 # nuxt-template
 
-> My wonderful Nuxt.js project
+>Quick start with Vuetify + Hygen + Storybook in Nuxt.js project
 
 ## Feature
 
+Generate useful templates to get you started with nuxt projects even faster.
+The differences from the "create nuxt-app" command are as follows:  
+
+* Hygen set up
+* Storybook set up
+* add vscode workspace config
+* rewrite eslint config to appropriate
+* remove starting components
 
 ## Usage
 
 ``` bash
 # clone this repository
-$ git clone sfs
+$ git clone https://github.com/TomokiMiyauci/nuxt-template.git
 
 # change directory
-$ cd sfs
+$ cd nuxt-template
 
 # initialize
 $ ./init
 ```
+
+## Addons
+
+``` bash
+# generate components template used for hygen
+$ yarn hygen
+
+# generate vuex template used for hygen
+$ yarn hygen:vuex
+
+# serve storybook whih hot reload at localhost:6006
+$ yarn storybook
+
+# build storybook for production
+$ yarn build-storybook
+```
+
 ## Build Setup
 
 ``` bash
