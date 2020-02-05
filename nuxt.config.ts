@@ -1,6 +1,9 @@
-import colors from 'vuetify/es5/util/colors'
+import * as path from 'path'
+import { Configuration } from '@nuxt/types'
 
-export default {
+const colors = require('vuetify/es5/util/colors').default
+
+const config: Configuration = {
   mode: 'universal',
 
   srcDir: 'src',
@@ -32,7 +35,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['~/plugins/composition-api'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -40,12 +43,19 @@ export default {
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     '@nuxtjs/vuetify',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/stylelint-module'
   ],
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/pwa'],
+  modules: [
+    // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/axios',
+    '@nuxtjs/pwa',
+    // Doc: https://github.com/nuxt-community/dotenv-module
+    '@nuxtjs/dotenv'
+  ],
   /*
    ** dotenv options
    */
@@ -80,6 +90,20 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+  },
+
+  typescript: {
+    typeCheck: {
+      eslint: true
+    }
+  },
+
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+      '~': path.resolve(__dirname, './src')
+    }
   }
 }
+
+export default config

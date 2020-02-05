@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 echo "start nuxt project"
 # read -p "? Project name:"
 echo -n ? Project name:

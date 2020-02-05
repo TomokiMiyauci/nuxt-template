@@ -1,9 +1,16 @@
 <template>
-  <div></div>
+  <div>{{ message }}</div>
 </template>
 
-<script>
-export default {}
-</script>
+<script lang="ts">
+import { createComponent, reactive, toRefs } from '@vue/composition-api'
+export default createComponent({
+  setup() {
+    const state = reactive({
+      message: 'hello'
+    })
 
-<style scoped></style>
+    return toRefs(state)
+  }
+})
+</script>
