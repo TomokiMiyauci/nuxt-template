@@ -41,6 +41,7 @@ const config: Configuration = {
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
+    '@nuxt/typescript-build',
     '@nuxtjs/eslint-module',
     '@nuxtjs/vuetify',
     '@nuxtjs/dotenv',
