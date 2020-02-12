@@ -87,9 +87,17 @@ const config: Configuration = {
    ** Build configuration
    */
   build: {
-    /*
-     ** You can extend webpack config here
-     */
+    terser: {
+      terserOptions: {
+        compress: { drop_console: process.env.NODE_ENV === 'production' }
+      }
+    },
+
+    extend(config) {
+      return Object.assign({}, config, {
+        devtool: 'source-map'
+      })
+    }
   },
 
   typescript: {
