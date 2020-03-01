@@ -1,11 +1,20 @@
 module.exports = {
   roots: ['<rootDir>/test'],
-  setupFilesAfterEnv: ['./test/setup.ts'],
-  testPathIgnorePatterns: ['/node_modules/', '.firebase'],
+  preset: 'ts-jest',
+  setupFilesAfterEnv: [
+    '<rootDir>/test/setup/composition-api.ts',
+    '<rootDir>/test/setup/vuetify.ts'
+  ],
+  testPathIgnorePatterns: [
+    '/node_modules/',
+    '.firebase',
+    '<rootDir>/test/unit/snapshot.spec.ts'
+  ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
     '^~/(.*)$': '<rootDir>/src/$1',
-    '^vue$': 'vue/dist/vue.common.js'
+    '^vue$': 'vue/dist/vue.common.js',
+    '^.+\\.(css|less)$': '<rootDir>/node_modules/jest-transform-stub'
   },
   modulePathIgnorePatterns: ['<rootDir>/.firebase'],
   moduleFileExtensions: ['js', 'vue', 'ts', 'json'],
@@ -17,6 +26,7 @@ module.exports = {
   },
   collectCoverage: true,
   collectCoverageFrom: [
+    '<rootDir>/src/functions/**/*.ts',
     '<rootDir>/src/components/**/*.vue',
     '<rootDir>/src/pages/**/*.vue'
   ]

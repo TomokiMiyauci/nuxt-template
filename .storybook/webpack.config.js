@@ -9,7 +9,7 @@ module.exports = ({ config }) => {
 
   config.module.rules.push({
     test: /\.vue$/,
-    loader: 'storybook-addon-vue-info/loader',
+    loader: 'vue-docgen-loader',
     enforce: 'post'
   })
 
@@ -24,12 +24,25 @@ module.exports = ({ config }) => {
           transpileOnly: true
         }
       }
-    ]
+    ],
+    exclude: [/vendor/, /\.nuxt/]
   })
+
+  config.module.rules.push({
+    test: /\.stories\.ts?$/,
+    loaders: [
+      {
+        loader: require.resolve('@storybook/source-loader'),
+        options: { parser: 'typescript' },
+      }
+    ],
+    enforce: 'pre',
+  })
+
   config.module.rules.push({
     test: /\.scss$/,
     use: ['style-loader', 'css-loader', 'sass-loader'],
-    include: path.resolve(__dirname, '../'),
+    include: rootPath,
   });
 
   config.plugins.push(new ForkTsCheckerWebpackPlugin())
